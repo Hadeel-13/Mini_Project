@@ -18,7 +18,7 @@ import {
     Stack,
     Typography,
 } from "@mui/material";
-import { ButtonWithPopup } from "../ButtonCustom";
+import { Button6, ButtonWithPopup } from "../ButtonCustom";
 import { ComponentSection1, ComponentSection2 } from "./PersonPopupSections";
 
 export default function HeaderSection2() {
@@ -132,6 +132,7 @@ export default function HeaderSection2() {
                                     <Stack
                                         direction={"row"}
                                         columnGap={7}
+                                        flexWrap={"wrap"}
                                         sx={{
                                             flexGrow: 1,
                                             columnGap: { sm: 1, lg: 7 },
@@ -142,45 +143,41 @@ export default function HeaderSection2() {
                                                 sx={{
                                                     color: "myGray500.main",
                                                     fontWeight: 400,
+                                                    
                                                     mb: 1,
                                                     ml: 1,
                                                 }}
                                             >
                                                 EUROPE
                                             </Typography>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3">
-                                                {EUROPEList?.map((item, i) => (
-                                                    <Button
-                                                        key={i}
-                                                        color="primary"
-                                                        variant="text"
-                                                        sx={{
-                                                            color: "#fff",
-                                                            ":hover": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                            ":focus": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                        }}
-                                                        onClick={() => {
-                                                            setDestinationValue(
-                                                                item
-                                                            );
-                                                        }}
-                                                    >
-                                                        {item}
-                                                    </Button>
-                                                ))}
-                                            </div>
+                                            <Typography
+                                                sx={{
+                                                    display: "grid",
+                                                    gridTemplateColumns: {
+                                                        xs: "repeat(1, minmax(0, 1fr))",
+                                                        sm: "repeat(2, minmax(0, 1fr))",
+                                                    },
+                                                    rowGap: 1,
+                                                    columnGap: 2,
+                                                }}
+                                            >
+                                                <Button6
+                                                    list={EUROPEList}
+                                                    setValue={
+                                                        setDestinationValue
+                                                    }
+                                                />
+                                            </Typography>
                                         </Typography>
                                         <Divider
                                             orientation="vertical"
                                             sx={{
                                                 bgcolor: "#fff",
                                                 my: 7,
+                                                visibility: {
+                                                    xs: "hidden",
+                                                    sm: "visible",
+                                                },
                                             }}
                                             flexItem
                                         />
@@ -189,46 +186,42 @@ export default function HeaderSection2() {
                                                 sx={{
                                                     color: "myGray500.main",
                                                     fontWeight: 400,
+                                                    
                                                     mb: 1,
                                                     ml: 1,
                                                 }}
                                             >
                                                 UNITED STATES
                                             </Typography>
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-3">
-                                                {UNITEDList?.map((item, i) => (
-                                                    <Button
-                                                        key={i}
-                                                        color="primary"
-                                                        variant="text"
-                                                        sx={{
-                                                            color: "#fff",
-                                                            ":hover": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                            ":focus": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                        }}
-                                                        onClick={() => {
-                                                            setDestinationValue(
-                                                                item
-                                                            );
-                                                        }}
-                                                    >
-                                                        {item}
-                                                    </Button>
-                                                ))}
-                                            </div>
+                                            <Typography
+                                                sx={{
+                                                    display: "grid",
+                                                    gridTemplateColumns: {
+                                                        xs: "repeat(1, minmax(0, 1fr))",
+                                                        sm: "repeat(2, minmax(0, 1fr))",
+                                                        md: "repeat(3, minmax(0, 1fr))",
+                                                    },
+                                                    rowGap: 1,
+                                                    columnGap: 2,
+                                                }}
+                                            >
+                                                <Button6
+                                                    list={UNITEDList}
+                                                    setValue={
+                                                        setDestinationValue
+                                                    }
+                                                />
+                                            </Typography>
                                         </Typography>
                                         <Divider
                                             orientation="vertical"
                                             sx={{
                                                 bgcolor: "#fff",
                                                 my: 7,
-                                                // ml: 13,
+                                                visibility: {
+                                                    xs: "hidden",
+                                                    sm: "visible",
+                                                },
                                             }}
                                             flexItem
                                         />
@@ -237,39 +230,28 @@ export default function HeaderSection2() {
                                                 sx={{
                                                     color: "myGray500.main",
                                                     fontWeight: 400,
+                                                    
                                                     mb: 1,
                                                     ml: 1,
                                                 }}
                                             >
                                                 ASIA
                                             </Typography>
-                                            <div className="grid grid-cols-1 gap-y-3">
-                                                {ASIAList?.map((item, i) => (
-                                                    <Button
-                                                        key={i}
-                                                        color="primary"
-                                                        variant="text"
-                                                        sx={{
-                                                            color: "#fff",
-                                                            ":hover": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                            ":focus": {
-                                                                background:
-                                                                    "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
-                                                            },
-                                                        }}
-                                                        onClick={() => {
-                                                            setDestinationValue(
-                                                                item
-                                                            );
-                                                        }}
-                                                    >
-                                                        {item}
-                                                    </Button>
-                                                ))}
-                                            </div>
+                                            <Typography
+                                                sx={{
+                                                    display: "grid",
+                                                    gridTemplateColumns:
+                                                        "repeat(1, minmax(0, 1fr))",
+                                                    rowGap: 1,
+                                                }}
+                                            >
+                                                <Button6
+                                                    list={ASIAList}
+                                                    setValue={
+                                                        setDestinationValue
+                                                    }
+                                                />
+                                            </Typography>
                                         </Typography>
                                     </Stack>
                                 </Box>

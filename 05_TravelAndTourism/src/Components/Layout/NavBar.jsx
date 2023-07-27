@@ -56,7 +56,6 @@ export default function NavBar() {
     return (
         <AppBar color="inherit" position="static">
             <Container maxWidth="xl">
-                {/* <span id="/home"></span> */}
                 <Toolbar disableGutters>
                     <Box sx={{ display: { xs: "none", lg: "flex" } }}>
                         <Typography

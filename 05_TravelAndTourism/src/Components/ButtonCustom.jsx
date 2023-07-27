@@ -135,6 +135,41 @@ Button5.propTypes = {
     children: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
 };
+export function Button6({ list, setValue }) {
+    return (
+        <>
+            {list?.map((item, i) => (
+                <Button
+                    key={i}
+                    color="primary"
+                    variant="text"
+                    sx={{
+                        display: "flex",
+                        justifyContent: "start",
+                        color: "#fff",
+                        ":hover": {
+                            background:
+                                "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
+                        },
+                        ":focus": {
+                            background:
+                                "linear-gradient(to top, #b6912100, #edc43175, #FFE169);",
+                        },
+                    }}
+                    onClick={() => {
+                        setValue(item);
+                    }}
+                >
+                    {item}
+                </Button>
+            ))}
+        </>
+    );
+}
+Button6.propTypes = {
+    list: PropTypes.array.isRequired,
+    setValue: PropTypes.func.isRequired,
+};
 export function ButtonWithPopup({
     lebel,
     children,
